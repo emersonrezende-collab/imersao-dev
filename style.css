@@ -1,0 +1,155 @@
+/* Estilos gerais para o corpo da página */
+body {
+    background-color: #000000; /* Fundo preto */
+    color: #e0d6c3; /* Cor de texto em tom sépia claro */
+    font-family: 'Courier New', Courier, monospace; /* Fonte que remete a máquinas de escrever */
+    margin: 0;
+    padding: 0 45px; /* Adiciona espaço nas laterais para as tiras de filme */
+    position: relative;
+}
+
+/* Adiciona os rolos de filme nos cantos superiores */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    width: 120px; /* Largura da imagem do rolo */
+    height: 120px; /* Altura da imagem do rolo */
+    background-image: url('https://i.imgur.com/r5E2B2s.png'); /* Imagem de um rolo de filme - você pode substituir */
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: sepia(0.8); /* Filtro sépia para a imagem */
+    z-index: 10;
+}
+
+body::before {
+    top: 0;
+    left: 0;
+}
+
+body::after {
+    top: 0;
+    right: 0;
+    transform: scaleX(-1); /* Inverte a imagem para o canto direito */
+}
+
+/* Estilização do cabeçalho */
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px dashed #5a4a3a; /* Linha sépia tracejada */
+}
+
+header h1 {
+    color: #c5a67c; /* Tom sépia mais forte para o título principal */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Estilização da caixa de busca */
+.search-box input {
+    background-color: #1a1a1a;
+    border: 1px solid #5a4a3a;
+    color: #e0d6c3;
+    padding: 8px 12px;
+    width: 300px;
+}
+
+.search-box input::placeholder {
+    color: #8a7a6a;
+}
+
+#botao-busca {
+    background-color: #8c7a51; /* Cor sépia para o botão */
+    color: #000000;
+    border: none;
+    padding: 9px 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-left: -5px; /* Ajuste para colar no input */
+}
+
+/* Container principal que simula a película */
+main {
+    padding: 20px 50px; /* Espaçamento para os "furos" da película */
+    position: relative;
+    background-color: #111111;
+    margin: 20px auto;
+    max-width: 900px;
+}
+ 
+/* Adiciona as tiras de filme nas laterais da tela inteira */
+.film-strip-left,
+.film-strip-right {
+    content: '';
+    position: fixed; /* Fixo para descer com a rolagem */
+    top: 0;
+    bottom: 0;
+    width: 40px; /* Largura da tira de filme */
+    background-image: radial-gradient(#000 35%, transparent 40%);
+    background-size: 40px 40px;
+    background-repeat: repeat-y;
+    background-color: #8c7a51; /* Cor de fundo sépia para a tira */
+    z-index: 5;
+}
+
+.film-strip-left {
+    left: 0;
+}
+
+.film-strip-right {
+    right: 0;
+}
+
+/* Estilização dos cards (os "frames" do filme) */
+.card {
+    background-color: #1a1a1a;
+    border: 1px solid #5a4a3a; /* Borda em tom sépia */
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    filter: sepia(0.3); /* Aplica um leve filtro sépia geral no card */
+}
+
+.card h2 {
+    color: #c5a67c;
+    border-bottom: 1px solid #5a4a3a;
+    padding-bottom: 5px;
+}
+
+.card a {
+    color: #a5865c;
+    text-decoration: none;
+}
+
+.card a:hover {
+    color: #e0d6c3;
+    text-decoration: underline;
+}
+
+/* Estilização do rodapé */
+footer {
+    text-align: center;
+    padding: 15px;
+    border-top: 2px dashed #5a4a3a;
+    font-size: 0.9em;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer a {
+    color: #a5865c;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
